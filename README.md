@@ -61,7 +61,7 @@ convertido para texto puro (`.txt`) e salvo em **UTF-8**.
 > **Sobre acentos:** o arquivo está em UTF-8 e o programa lida com acentos
 > normalmente (as buscas por `SALÁRIO`, `VIGILÂNCIA` etc. funcionam). As
 > palavras só podem aparecer "tortas" na tela dependendo da configuração de
-> codificação do terminal — isso é apenas exibição, não afeta a lógica.
+> codificação do terminal, isso é apenas exibição, não afeta a lógica.
 
 ---
 
@@ -146,7 +146,7 @@ Todos os departamentos ficam em um `std::vector<Departamento>`, mantido na
 - **Pesquisas** são *case-insensitive* (não diferenciam maiúsculas/minúsculas):
   internamente tudo é comparado em MAIÚSCULAS.
 - As ordenações das opções 4 e 5 trabalham sobre uma **cópia** dos dados, então
-  a ordem original carregada na memória **não é alterada** — você pode rodar
+  a ordem original carregada na memória **não é alterada**, você pode rodar
   qualquer ordenação quantas vezes quiser sem "estragar" os dados.
 
 ---
@@ -167,7 +167,7 @@ vetor) e vai reduzindo pela metade até o gap valer 1.
 
 - Com gaps grandes, elementos distantes se aproximam rapidamente da posição
   certa, com poucas trocas.
-- Quando o gap chega a 1, o algoritmo vira um Insertion Sort normal — mas agora
+- Quando o gap chega a 1, o algoritmo vira um Insertion Sort normal, mas agora
   o vetor já está "quase ordenado", então essa última passada é muito rápida.
 
 **Complexidade:** depende da sequência de gaps; na prática fica em torno de
@@ -231,8 +231,7 @@ Mantendo o escopo simples do trabalho, foram aplicadas algumas boas práticas:
 
 1. **Separação em módulos** (`Arquivo`, `Pesquisa`, `Ordenacao`, `main`) em vez
    de um único arquivo gigante. Cada parte tem uma responsabilidade clara.
-2. **Cabeçalhos (.h) com declarações + implementações (.cpp)**, padrão usado em
-   projetos C++ reais — facilita compilar e localizar código.
+2. **Cabeçalhos (.h) com declarações + implementações (.cpp)**, facilita compilar e localizar código.
 3. **Pesquisas retornando ponteiro (`const Departamento*`)**: devolver `nullptr`
    é uma forma simples e clara de indicar "não encontrado", sem exceções.
 4. **Ordenações sobre cópias dos dados**: preservam a ordem original, permitindo
