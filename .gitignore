@@ -1,0 +1,10 @@
+# Executáveis e objetos
+departamentos
+*.exe
+*.o
+*.out
+
+# Pastas de IDE
+.vs/
+.vscode/
+.claude/
